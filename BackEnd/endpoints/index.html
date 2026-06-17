@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Não Encontrada - 404</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+        }
+
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            color: #4f46e5;
+            line-height: 1;
+            margin-bottom: 10px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .error-message {
+            font-size: 16px;
+            color: #6b7280;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: #4f46e5;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn-home:hover {
+            background-color: #4338ca;
+            transform: translateY(-2px);
+        }
+
+        .btn-home:active {
+            transform: translateY(0);
+        }
+
+        /* Animaçãozinha para dar um charme */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Ops! Página não encontrada</h1>
+        <p class="error-message">
+            O link que você acessou pode estar quebrado ou a página pode ter sido removida. Verifique o endereço digitado ou volte para a página inicial.
+        </p>
+        <a href="/" class="btn-home">Voltar para o Início</a>
+    </div>
+
+</body>
+</html>
