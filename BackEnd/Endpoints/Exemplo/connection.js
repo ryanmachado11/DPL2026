@@ -15,7 +15,7 @@ const servidor = http.createServer((req, res) => {
 
     else if (req.url === '/redirect') {
         res.writeHead(301, {'Content-Type': 'text/plain'});
-        res.end('Codigo 301');
+        res.end('Codigo 301 - Rediect');
     }
 
     else if (req.url === '/client-error') {

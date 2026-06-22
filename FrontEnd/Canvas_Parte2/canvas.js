@@ -4,7 +4,8 @@ canvas.height = window.innerHeight;
 
 var c = canvas.getContext('2d');
 var dx = 300, dy = 1;
-var x = 3;
+var speed = 3;
+var x = speed;
 var animateRunning = true;
 
 function animate() {
@@ -19,8 +20,15 @@ function animate() {
 
     dy += x;
 
-    if (dy + 200 > canvas.height - 40) x = -3;
-    if (dy < 0) x = 3;
+    if (dy + 200 > canvas.height - 40) x = -speed;
+    if (dy < 0) x = speed;
+}
+
+function updateSpeed(value) {
+    speed = Number(value);
+    x = x < 0 ? -speed : speed;
+    var speedLabel = document.getElementById('speedValue');
+    if (speedLabel) speedLabel.textContent = speed;
 }
 
 function stopAnimation() {
