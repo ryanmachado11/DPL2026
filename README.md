@@ -252,12 +252,4 @@ Desenvolvido como parte do curso de **Desenvolvimento de Sistemas (DPL)**.
 
 ---
 
-## ✨ Última Atualização
-
-- **Data:** 21 de Junho de 2026
-- **Conteúdo:** 5 READMEs Frontend + 2 READMEs Backend + README raiz
-- **Status:** Em desenvolvimento contínuo
-
----
-
 ✍️ *Para mais detalhes, consulte os READMEs específicos em cada pasta!*
