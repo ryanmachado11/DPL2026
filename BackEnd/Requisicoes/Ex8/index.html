@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Adivinhação</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background-color: rgb(104, 104, 104);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      color: rgb(255, 255, 255);
+    }
+    input {
+      padding: 10px;
+      font-size: 1em;
+      border: none;
+      width: 150px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      color: rgb(80, 80, 80);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #resultado {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" id="inputValue" size="15" placeholder="digite um número">
+  <button id="btnEnviar">Enviar</button>
+  <div id="resultado"></div>
+
+  <script>
+    function enviar() {
+      const valor = document.getElementById('inputValue').value;
+      const params = new URLSearchParams(window.location.search);
+      let count = Number(params.get('count')) || 0;
+      count = count + 1;
+      window.location.href = `/guess?Enviar=${encodeURIComponent(valor)}&count=${count}`;
+    }
+
+    document.getElementById('btnEnviar').addEventListener('click', enviar);
+    document.getElementById('inputValue').focus();
+  </script>
+</body>
+</html>

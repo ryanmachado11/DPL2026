@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #000);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            padding: 40px;
+            border: 2px solid #ff3333;
+            border-radius: 15px;
+            background-color: rgba(255, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff3333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ff3333;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .emoji {
+            font-size: 5rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">💀</div>
+        <h1>GAME OVER</h1>
+        <p>Você não acertou o número sorteado.</p>
+        <p>Tente novamente e desafie sua sorte! 🎲</p>
+        <a href="#" class="btn" onclick="location.reload()">Jogar Novamente</a>
+    </div>
+</body>
+</html>

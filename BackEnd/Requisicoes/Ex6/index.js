@@ -9,29 +9,37 @@ const servidor = http.createServer((req, res) => {
     const path = urlParams.pathname;
     
     if (path === '/') {
-        fs.readFile('index.html', (err, data) => {
-            if (err) {
-                res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'});
-                res.end('Erro ao carregar o arquivo');
-                return;
-            }
-            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-            res.end(data);
-        });
+        res.writeHead(302, {'Location': '/guess'});
+        res.end();
+
     } else if (path === '/guess') {
         const numero = urlParams.searchParams.get('Enviar');
-        
+
+        if (numero === null) {
+            fs.readFile('index.html', (err, data) => {
+                if (err) {
+                    res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'});
+                    res.end('Erro ao carregar o arquivo');
+                    return;
+                }
+                res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+                res.end(data);
+            });
+            return;
+        }
+
         let resultado;
         if (numero < numero1a100) {
-            resultado = 'menor';
+            resultado = 'o número é maior.';
         } else if (numero > numero1a100) {
-            resultado = 'maior';
+            resultado = 'o número é menor.';
         } else {
-            resultado = 'igual';
+            resultado = 'você acertou o número!';
         }
-        
+
         res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
         res.end(resultado);
+
     } else {
         res.writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'});
         res.end('Página não encontrada');
