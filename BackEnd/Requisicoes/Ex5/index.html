@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 5</title>
+  <style>
+    body {
+      height: 100%;
+      margin: 0;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="inputValue" size="15">
+  <button onclick="enviar()">Enviar</button>
+  
+  <script>
+    function enviar() {
+      const valor = document.getElementById('inputValue').value;
+      window.location.href = `/guess?Enviar=${valor}`;
+    }
+  </script>
+</body>
+</html>
